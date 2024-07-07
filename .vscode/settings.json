@@ -8,5 +8,8 @@
   "editor.formatOnSave": true,
   "[erb]": {
     "editor.defaultFormatter": "elia.erb-formatter"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   }
 }
