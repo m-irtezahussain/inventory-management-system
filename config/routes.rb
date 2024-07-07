@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   post "admin/new", to: "admin#create"
 
   get "dashboard", to: "dashboard#index"
+  post "dashboard", to: "dashboard#create"
   
 end
