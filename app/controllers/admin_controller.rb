@@ -5,7 +5,7 @@ class AdminController < ApplicationController
     end
 
     def login
-           
+
     end
 
     def create
@@ -13,12 +13,12 @@ class AdminController < ApplicationController
       
         if old_admin.exists?
           flash[:alert] = "Admin with this name already exists."
-          redirect_to new_admin_path
+          redirect_to "/"
         else
-          @admin = Admin.create_record(admin_params)
-          if @admin.persisted?
+          @admin = Admin.new(admin_params)
+          if @admin.save
             flash[:notice] = "Admin successfully created."
-            redirect_to @admin
+            redirect_to dashboard_path
           else
             flash[:alert] = "Failed to create Admin."
             render :new
@@ -30,7 +30,7 @@ class AdminController < ApplicationController
         user = Admin.authenticate(params[:email], params[:password])
         if user
             session[:admin_id] = user.id
-            redirect_to login_path
+            redirect_to dashboard_path
           else
             flash.now[:alert] = 'Invalid email/password combination'
             render 'new'
