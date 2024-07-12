@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "login", to: "admin#login"
   post "login", to: "admin#create_session"
 
+  get "admin/request", to: "admin#request22"
+
   get "admin/new", to: "admin#new"
   post "admin/new", to: "admin#create"
 
