@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
   get "/",  to: "home#index"
+  get "/contact-us", to: "home#contact_us" 
 
   get "login", to: "admin#login"
   post "login", to: "admin#create_session"
+
+  get "admin/request", to: "admin#request22"
 
   get "admin/new", to: "admin#new"
   post "admin/new", to: "admin#create"
