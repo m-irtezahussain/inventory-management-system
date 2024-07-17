@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get "login", to: "admin#login"
   post "login", to: "admin#create_session"
+  delete '/logout', to: 'admin#destroy_session', as: :logout
 
   get "admin/request", to: "admin#request22"
 
