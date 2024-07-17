@@ -12,8 +12,11 @@
 
   <body>
     <div class="w-full h-content bg-gray-200">
-      <%= yield %>
+      <div id="flash">
+        <%= render "shared/flash" unless flash.empty? %>
+      </div>
 
+      <%= yield %>
     </div>
   </body>
 </html>
