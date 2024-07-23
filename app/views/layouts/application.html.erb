@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <div class="w-full h-content bg-gray-200" x-data="{'signOut': false, 'createProductModal': false}" x-cloak>
+    <div class="w-full h-content bg-gray-200" 
+    x-data="{
+      'signOut': false, 
+      'createProductModal': false, 
+      'editProductModal': false,
+      'selectedProduct' : null,
+      }" x-cloak>
       <div id="flash">
         <%= render "shared/flash" unless flash.empty? %>
       </div>

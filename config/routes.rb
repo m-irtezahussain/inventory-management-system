@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   post "admin/new", to: "admin#create"
 
   get "dashboard", to: "dashboard#index"
-  post "dashboard", to: "dashboard#create"
+  # post "dashboard", to: "dashboard#create"
+
+  post "add_product", to: "product#add_product"
+  delete 'products/:id', to: "product#destroy", as: "delete_product" 
   
 end
