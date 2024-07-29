@@ -33,16 +33,20 @@
             <% end %>
           </td>
           <td class="flex justify-end gap-4 px-6 py-4 font-medium">
-            <%= form_with(url: delete_product_path(prod.id), method: :delete , local: true) do |form|%>
-            <button type="submit">Delete</button>
-            <% end %>
-            <!-- <button @click="selectedProduct = <%#= prod.to_json.html_safe %> ; editProductModal = true" class="text-primary-700">Edit</button> -->
-            
-            
+            <button @click="deleteModal = true" onclick="deleteProduct(this)" data-product="<%= prod.to_json %>">Delete</button>
+            <button @click="editProductModal = true" data-product="<%= prod.to_json %>" class="text-primary-700" onclick="editProduct(this)">Edit</button>  
           </td>
         </tr>
         <% end %>
       </tbody>
-    </table>
-  </div>
+  </table>
+</div>
+
+<script>
+  
+</script>
+
+
+
+  
   

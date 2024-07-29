@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # post "dashboard", to: "dashboard#create"
 
   post "add_product", to: "product#add_product"
-  delete 'products/:id', to: "product#destroy", as: "delete_product" 
+  delete 'products/:id', to: "product#destroy", as: "delete_product"
+  put '/update/:id', to: 'product#update', as: "update"
+
   
 end
