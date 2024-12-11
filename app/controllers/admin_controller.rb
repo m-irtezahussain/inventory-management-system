@@ -18,6 +18,7 @@ class AdminController < ApplicationController
           @admin = Admin.new(admin_params)
           if @admin.save
             session[:admin_id] = @admin.id
+            AdminMailer.with(admin: @admin).welcome_mail.deliver_later
             flash[:success] = "Admin successfully created."
             redirect_to dashboard_path
           else
